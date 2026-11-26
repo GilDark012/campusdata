@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 660" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .fr{fill:#fff;stroke:#334155;stroke-width:1.5}
+    .hd{fill:#1e293b}
+    .lbl{fill:#0f172a;font-size:13px}
+    .mut{fill:#64748b;font-size:12px}
+    .btn{fill:#2563eb}
+    .btnt{fill:#fff;font-size:13px;font-weight:600}
+    .cell{fill:#0f172a;font-size:12px}
+    .anno{fill:#b45309;font-size:12px;font-style:italic}
+    .annoline{stroke:#f59e0b;stroke-width:1;stroke-dasharray:4 3}
+    .state{fill:#fef3c7;stroke:#f59e0b;stroke-width:1}
+    .statet{fill:#92400e;font-size:11px}
+    .badge{fill:#e2e8f0}
+  </style>
+
+  <rect x="0" y="0" width="980" height="660" fill="#f8fafc"/>
+  <text x="20" y="28" font-size="16" font-weight="700" fill="#0f172a">Screen A — Dataset list + creation form</text>
+  <text x="20" y="46" class="mut">CampusData · internal data-team tool · no login (owner is a free-text label, not an account)</text>
+
+  <!-- top bar -->
+  <rect x="20" y="60" width="700" height="44" class="fr"/>
+  <text x="34" y="88" font-size="15" font-weight="700" fill="#0f172a">CampusData</text>
+  <text x="560" y="88" class="mut">version: dev</text>
+  <line x1="548" y1="70" x2="548" y2="94" stroke="#cbd5e1"/>
+
+  <!-- create form -->
+  <rect x="20" y="118" width="700" height="120" class="fr"/>
+  <text x="34" y="142" class="lbl" font-weight="700">Create a dataset</text>
+  <text x="34" y="168" class="mut">Name *</text>
+  <rect x="34" y="174" width="300" height="30" class="fr"/>
+  <text x="44" y="194" class="mut">Air quality - building A</text>
+  <text x="354" y="168" class="mut">Owner (optional, default "Team")</text>
+  <rect x="354" y="174" width="200" height="30" class="fr"/>
+  <text x="574" y="168" class="mut">Description (optional)</text>
+  <rect x="574" y="174" width="130" height="30" class="fr"/>
+  <rect x="34" y="210" width="90" height="22" class="btn"/>
+  <text x="79" y="225" class="btnt" text-anchor="middle">Create</text>
+
+  <!-- table -->
+  <rect x="20" y="252" width="700" height="260" class="fr"/>
+  <rect x="20" y="252" width="700" height="30" class="hd"/>
+  <text x="34" y="272" fill="#fff" font-size="12" font-weight="700">Name</text>
+  <text x="300" y="272" fill="#fff" font-size="12" font-weight="700">Owner</text>
+  <text x="420" y="272" fill="#fff" font-size="12" font-weight="700">Measurements</text>
+  <text x="560" y="272" fill="#fff" font-size="12" font-weight="700">Created</text>
+  <text x="660" y="272" fill="#fff" font-size="12" font-weight="700">Actions</text>
+
+  <line x1="20" y1="312" x2="720" y2="312" stroke="#e2e8f0"/>
+  <text x="34" y="302" class="cell">Air quality - building A</text>
+  <text x="300" y="302" class="cell">Team A</text>
+  <text x="440" y="302" class="cell">63</text>
+  <text x="560" y="302" class="cell">2026-10-05</text>
+  <text x="660" y="302" class="btn" font-size="12">Open · Delete</text>
+
+  <line x1="20" y1="342" x2="720" y2="342" stroke="#e2e8f0"/>
+  <text x="34" y="332" class="cell">Sensor stream (Kafka)</text>
+  <text x="300" y="332" class="cell">Sensors</text>
+  <text x="440" y="332" class="cell">24</text>
+  <text x="560" y="332" class="cell">2026-11-16</text>
+  <text x="660" y="332" class="btn" font-size="12">Open · Delete</text>
+
+  <text x="34" y="368" class="mut">(newest first — sorted by created_at desc)</text>
+
+  <!-- state panels (right column) -->
+  <text x="748" y="74" font-size="13" font-weight="700" fill="#0f172a">The 4 states to design</text>
+
+  <rect x="748" y="86" width="212" height="58" class="state"/>
+  <text x="760" y="104" class="statet" font-weight="700">EMPTY</text>
+  <text x="760" y="122" class="statet">"No dataset yet — create one</text>
+  <text x="760" y="136" class="statet">to start." (not an error)</text>
+
+  <rect x="748" y="154" width="212" height="46" class="state"/>
+  <text x="760" y="172" class="statet" font-weight="700">LOADING</text>
+  <text x="760" y="190" class="statet">spinner / "Loading…"</text>
+
+  <rect x="748" y="210" width="212" height="58" class="state"/>
+  <text x="760" y="228" class="statet" font-weight="700">SUCCESS</text>
+  <text x="760" y="246" class="statet">new row appears at the top;</text>
+  <text x="760" y="260" class="statet">form clears.</text>
+
+  <rect x="748" y="278" width="212" height="84" class="state"/>
+  <text x="760" y="296" class="statet" font-weight="700">ERROR (409)</text>
+  <text x="760" y="314" class="statet">name already used →</text>
+  <text x="760" y="328" class="statet">inline "This name is taken";</text>
+  <text x="760" y="342" class="statet">typed input is KEPT.</text>
+
+  <!-- interaction annotations -->
+  <text x="20" y="548" font-size="13" font-weight="700" fill="#0f172a">Interaction notes</text>
+  <text x="20" y="570" class="anno">• Keyboard: Tab = Name → Owner → Description → Create; visible focus ring on every field.</text>
+  <text x="20" y="590" class="anno">• Delete asks for confirmation (see Screen B); Cancel sends NO request.</text>
+  <text x="20" y="610" class="anno">• Dataset names shown as text — tags like &lt;b&gt; must NOT render as HTML (XSS-safe).</text>
+  <text x="20" y="630" class="anno">• Validation mirrors the contract: blank/2-char/121-char name → 422; owner null/blank → 422.</text>
+
+  <line x1="337" y1="189" x2="440" y2="150" class="annoline"/>
+  <text x="360" y="130" class="anno">required, 3–120 chars, unique</text>
+</svg>

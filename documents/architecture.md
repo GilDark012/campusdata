@@ -45,7 +45,11 @@ Priority: **M** = must (core), **S** = should. "Owner" is the pair member who dr
 
 ## 3. Mockups and interactions
 
-Two screens (attach the annotated PNG/sketch next to this file — `documents/mockups/`).
+Two annotated mockups are in `documents/mockups/`:
+- **Screen A** — dataset list + creation form: `mockups/screen-a-datasets.svg`
+- **Screen B** — one dataset (uploads + indicators): `mockups/screen-b-dataset.svg`
+
+Each mockup annotates the four states (empty / loading / success / error), the keyboard journey, the delete confirmation and the "cancel sends no request" rule. Summary below.
 
 **Screen A — dataset list + creation form.** Annotate: a table (name, owner, measurement count, created date, open/delete), and a form (name, owner optional default "Team", description optional).
 - **Empty:** "No dataset yet — create one to start." (not an error).

@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 720" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .fr{fill:#fff;stroke:#334155;stroke-width:1.5}
+    .hd{fill:#1e293b}
+    .lbl{fill:#0f172a;font-size:13px}
+    .mut{fill:#64748b;font-size:12px}
+    .btn{fill:#2563eb}
+    .btnt{fill:#fff;font-size:13px;font-weight:600}
+    .cell{fill:#0f172a;font-size:12px}
+    .anno{fill:#b45309;font-size:12px;font-style:italic}
+    .state{fill:#fef3c7;stroke:#f59e0b;stroke-width:1}
+    .statet{fill:#92400e;font-size:11px}
+    .ok{fill:#16a34a}
+    .bad{fill:#dc2626}
+    .warn{fill:#d97706}
+  </style>
+
+  <rect x="0" y="0" width="980" height="720" fill="#f8fafc"/>
+  <text x="20" y="28" font-size="16" font-weight="700" fill="#0f172a">Screen B — One dataset: uploads + indicators</text>
+  <text x="20" y="46" class="mut">"Air quality - building A" · ← back to list</text>
+
+  <!-- upload box -->
+  <rect x="20" y="60" width="700" height="70" class="fr"/>
+  <text x="34" y="84" class="lbl" font-weight="700">Upload a CSV</text>
+  <rect x="34" y="94" width="220" height="26" class="fr"/>
+  <text x="44" y="112" class="mut">room-measurements-2026-10-05.csv</text>
+  <rect x="264" y="94" width="90" height="26" class="btn"/>
+  <text x="309" y="112" class="btnt" text-anchor="middle">Upload</text>
+  <text x="370" y="112" class="mut">header: room,measured_at,co2_ppm,temperature_c,humidity_pct</text>
+
+  <!-- uploads list -->
+  <rect x="20" y="144" width="700" height="210" class="fr"/>
+  <rect x="20" y="144" width="700" height="28" class="hd"/>
+  <text x="34" y="163" fill="#fff" font-size="12" font-weight="700">File</text>
+  <text x="300" y="163" fill="#fff" font-size="12" font-weight="700">Status</text>
+  <text x="400" y="163" fill="#fff" font-size="12" font-weight="700">Acc / Rej / Dup</text>
+  <text x="560" y="163" fill="#fff" font-size="12" font-weight="700">Action</text>
+
+  <line x1="20" y1="202" x2="720" y2="202" stroke="#e2e8f0"/>
+  <text x="34" y="192" class="cell">room-measurements-2026-10-05.csv</text>
+  <text x="300" y="192" class="ok" font-size="12" font-weight="700">succeeded</text>
+  <text x="400" y="192" class="cell">63 / 0 / 0</text>
+
+  <line x1="20" y1="232" x2="720" y2="232" stroke="#e2e8f0"/>
+  <text x="34" y="222" class="cell">measurements-with-errors.csv</text>
+  <text x="300" y="222" class="ok" font-size="12" font-weight="700">succeeded</text>
+  <text x="400" y="222" class="cell">4 / 7 / 1</text>
+  <text x="560" y="222" class="btn" font-size="12">view reasons ▾</text>
+
+  <line x1="20" y1="262" x2="720" y2="262" stroke="#e2e8f0"/>
+  <text x="34" y="252" class="cell">invalid-header.csv</text>
+  <text x="300" y="252" class="bad" font-size="12" font-weight="700">failed</text>
+  <text x="400" y="252" class="cell">Invalid header</text>
+  <rect x="558" y="240" width="60" height="20" class="btn"/>
+  <text x="588" y="254" class="btnt" text-anchor="middle" font-size="11">Retry</text>
+
+  <line x1="20" y1="292" x2="720" y2="292" stroke="#e2e8f0"/>
+  <text x="34" y="282" class="cell">stream-upload (kafka)</text>
+  <text x="300" y="282" class="warn" font-size="12" font-weight="700">running…</text>
+  <text x="400" y="282" class="cell">— / — / —</text>
+
+  <!-- reasons expander -->
+  <text x="34" y="316" class="mut" font-weight="700">reasons (measurements-with-errors.csv) — first 20 shown:</text>
+  <text x="34" y="334" class="mut">line 5 Invalid co2_ppm · line 6 Invalid humidity_pct · line 7 Invalid measured_at · line 8 Invalid room</text>
+  <text x="34" y="348" class="mut">line 9 measured_at in the future · line 10 Invalid temperature_c · line 12 Expected 5 columns</text>
+
+  <!-- indicators -->
+  <rect x="20" y="368" width="700" height="180" class="fr"/>
+  <text x="34" y="392" class="lbl" font-weight="700">Indicators per room</text>
+  <text x="34" y="414" class="mut">Room</text>
+  <rect x="80" y="402" width="110" height="24" class="fr"/><text x="90" y="419" class="mut">all ▾</text>
+  <text x="210" y="414" class="mut">From</text>
+  <rect x="250" y="402" width="120" height="24" class="fr"/>
+  <text x="390" y="414" class="mut">To</text>
+  <rect x="420" y="402" width="120" height="24" class="fr"/>
+  <text x="552" y="419" class="mut">(from inclusive, to exclusive)</text>
+
+  <rect x="34" y="436" width="672" height="26" fill="#f1f5f9"/>
+  <text x="44" y="453" class="cell" font-weight="700">room</text>
+  <text x="150" y="453" class="cell" font-weight="700">count</text>
+  <text x="240" y="453" class="cell" font-weight="700">CO₂ avg</text>
+  <text x="340" y="453" class="cell" font-weight="700">CO₂ min</text>
+  <text x="440" y="453" class="cell" font-weight="700">CO₂ max</text>
+  <text x="560" y="453" class="cell" font-weight="700">last seen</text>
+  <text x="44" y="479" class="cell">A101</text><text x="150" y="479" class="cell">21</text><text x="240" y="479" class="cell">636.1</text><text x="340" y="479" class="cell">430</text><text x="440" y="479" class="cell">1092</text><text x="560" y="479" class="cell">2026-10-05 16:00Z</text>
+  <text x="44" y="501" class="cell">A102</text><text x="150" y="501" class="cell">21</text><text x="240" y="501" class="cell">735.0</text><text x="340" y="501" class="cell">—</text><text x="440" y="501" class="cell">1304</text><text x="560" y="501" class="cell">…</text>
+  <text x="44" y="523" class="cell">B201</text><text x="150" y="523" class="cell">21</text><text x="240" y="523" class="cell">843.4</text><text x="340" y="523" class="cell">—</text><text x="440" y="523" class="cell">1572</text><text x="560" y="523" class="cell">…</text>
+
+  <!-- states -->
+  <text x="748" y="74" font-size="13" font-weight="700" fill="#0f172a">The 4 states to design</text>
+  <rect x="748" y="86" width="212" height="46" class="state"/>
+  <text x="760" y="104" class="statet" font-weight="700">EMPTY</text>
+  <text x="760" y="122" class="statet">"No upload yet."</text>
+
+  <rect x="748" y="142" width="212" height="60" class="state"/>
+  <text x="760" y="160" class="statet" font-weight="700">LOADING</text>
+  <text x="760" y="178" class="statet">pending/running badge,</text>
+  <text x="760" y="192" class="statet">auto-refreshing.</text>
+
+  <rect x="748" y="212" width="212" height="74" class="state"/>
+  <text x="760" y="230" class="statet" font-weight="700">SUCCESS</text>
+  <text x="760" y="248" class="statet">succeeded badge +</text>
+  <text x="760" y="262" class="statet">acc/rej/dup counters +</text>
+  <text x="760" y="276" class="statet">reasons list.</text>
+
+  <rect x="748" y="296" width="212" height="86" class="state"/>
+  <text x="760" y="314" class="statet" font-weight="700">ERROR</text>
+  <text x="760" y="332" class="statet">413 too large / 415 wrong</text>
+  <text x="760" y="346" class="statet">type → readable banner,</text>
+  <text x="760" y="360" class="statet">not a raw code.</text>
+
+  <!-- delete confirm -->
+  <rect x="748" y="398" width="212" height="110" class="fr"/>
+  <text x="760" y="418" class="lbl" font-weight="700">Delete confirmation</text>
+  <text x="760" y="438" class="mut">"Delete this dataset and its</text>
+  <text x="760" y="452" class="mut">measurements? This cannot</text>
+  <text x="760" y="466" class="mut">be undone."</text>
+  <rect x="760" y="476" width="70" height="22" class="bad"/><text x="795" y="491" class="btnt" text-anchor="middle" font-size="11">Delete</text>
+  <rect x="840" y="476" width="70" height="22" fill="#e2e8f0"/><text x="875" y="491" fill="#0f172a" text-anchor="middle" font-size="11">Cancel</text>
+
+  <!-- annotations -->
+  <text x="20" y="588" font-size="13" font-weight="700" fill="#0f172a">Interaction notes</text>
+  <text x="20" y="610" class="anno">• "Retry" button is shown ONLY on a failed upload (succeeded/pending/running → no button; API would answer 409).</text>
+  <text x="20" y="630" class="anno">• A bad ROW is counted + skipped, upload still succeeds; a bad FILE (header) fails with 0 measurements.</text>
+  <text x="20" y="650" class="anno">• Re-uploading the same file → 0 accepted / 63 duplicate; the count stays 63 (idempotent).</text>
+  <text x="20" y="670" class="anno">• Period filter: if From ≥ To → 422, show an inline message instead of calling again.</text>
+  <text x="20" y="690" class="anno">• Cancel on the delete dialog sends NO DELETE request.</text>
+</svg>
