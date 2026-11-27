@@ -1,0 +1,17 @@
+s1-boot — Session 1 base-app boot check
+date: 2026-11-27T15:06:23Z
+commit: c898e71
+env: API on laptop (Python 3.12 venv), Postgres 17-alpine via compose.dev.yaml on 127.0.0.1:5432
+
+# docker
+NAME                  STATUS                    PORTS
+campusdata-dev-db-1   Up 56 seconds (healthy)   127.0.0.1:5432->5432/tcp
+
+# uvicorn: python -m uvicorn app.main:app --app-dir api --port 8000
+
+$ curl /health/live
+{"status":"ok"}  HTTP 200
+$ curl /health/ready
+{"status":"ready"}  HTTP 200
+$ curl /api/version
+{"version":"dev"}  HTTP 200
